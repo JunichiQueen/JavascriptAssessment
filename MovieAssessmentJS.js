@@ -26,12 +26,29 @@ function get10Movies(){
         console.log(req.responseText);
         let reqObject = JSON.parse(req.responseText);
         console.log(x);
-        for (var index in reqObject){
-            console.log(reqObject[index]);
-            let y = document.createElement("td");
-            y.innerText = reqObject[index];
-            document.getElementById("tablerow").appendChild(y);
+
+        console.log(reqObject.Search[3]);
+        
+
+        for (let i=0; i<10; i++){
+            let searcharray = reqObject.Search[i];
+            //console.log(reqObject.search[2]);
+            
+            for (var index2 in searcharray){
+                let y = document.createElement("td");
+                y.innerText = searcharray.index2;
+                document.getElementById("tablerow").appendChild(y);
+            }
         }
+
+        // for (var index in reqObject){
+        //     console.log(reqObject[index]);
+        //     let y = document.createElement("td");
+        //     // console.log( reqObject[index])
+        //     y.innerText = reqObject[index];
+            
+        //     document.getElementById("tablerow").appendChild(y);
+        // }
 
         // let printout = document.createElement("p");
         // printout.innerText = req.responseText;
