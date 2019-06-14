@@ -33,12 +33,28 @@ function get10Movies(){
         for (let i=0; i<10; i++){
             let searcharray = reqObject.Search[i];
             //console.log(reqObject.search[2]);
+            let y = document.createElement("td");
+            y.innerText = searcharray.Title;
+            document.getElementById("tablerow").appendChild(y);
+            let a = document.createElement("td");
+            a.innerText = searcharray.Year;
+            document.getElementById("tablerow").appendChild(a);
+            let b = document.createElement("td");
+            b.innerText = searcharray.imdbID;
+            document.getElementById("tablerow").appendChild(b);
+            let c = document.createElement("td");
+            c.innerText = searcharray.Type;
+            document.getElementById("tablerow").appendChild(c);
+            let d = document.createElement("td");
+            d.innerText = searcharray.Poster;
+            document.getElementById("tablerow").appendChild(d);
+
             
-            for (var index2 in searcharray){
-                let y = document.createElement("td");
-                y.innerText = searcharray.index2;
-                document.getElementById("tablerow").appendChild(y);
-            }
+            // for (var Title in searcharray){
+            //     let y = document.createElement("td");
+            //     y.innerText = searcharray.Title;
+            //     document.getElementById("tablerow").appendChild(y);
+            // }
         }
 
         // for (var index in reqObject){
