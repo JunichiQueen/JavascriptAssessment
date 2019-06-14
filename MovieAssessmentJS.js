@@ -26,12 +26,45 @@ function get10Movies(){
         console.log(req.responseText);
         let reqObject = JSON.parse(req.responseText);
         console.log(x);
-        for (var index in reqObject){
-            console.log(reqObject[index]);
+
+        console.log(reqObject.Search[3]);
+        
+
+        for (let i=0; i<10; i++){
+            let searcharray = reqObject.Search[i];
+            //console.log(reqObject.search[2]);
             let y = document.createElement("td");
-            y.innerText = reqObject[index];
+            y.innerText = searcharray.Title;
             document.getElementById("tablerow").appendChild(y);
+            let a = document.createElement("td");
+            a.innerText = searcharray.Year;
+            document.getElementById("tablerow").appendChild(a);
+            let b = document.createElement("td");
+            b.innerText = searcharray.imdbID;
+            document.getElementById("tablerow").appendChild(b);
+            let c = document.createElement("td");
+            c.innerText = searcharray.Type;
+            document.getElementById("tablerow").appendChild(c);
+            let d = document.createElement("td");
+            d.innerText = searcharray.Poster;
+            document.getElementById("tablerow").appendChild(d);
+
+            
+            // for (var Title in searcharray){
+            //     let y = document.createElement("td");
+            //     y.innerText = searcharray.Title;
+            //     document.getElementById("tablerow").appendChild(y);
+            // }
         }
+
+        // for (var index in reqObject){
+        //     console.log(reqObject[index]);
+        //     let y = document.createElement("td");
+        //     // console.log( reqObject[index])
+        //     y.innerText = reqObject[index];
+            
+        //     document.getElementById("tablerow").appendChild(y);
+        // }
 
         // let printout = document.createElement("p");
         // printout.innerText = req.responseText;
